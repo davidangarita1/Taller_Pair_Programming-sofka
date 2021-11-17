@@ -1,6 +1,17 @@
+h1 {
+	text-align: center;
+}
+
+main {
+	margin: 0 auto;
+}
+
 #canvas {
 	border: 1px solid black;
 	background-color: #FFF;
-	width: 100%;
-	height: 100%;
+}
+
+#pj1, #pj2 {
+	font-size: 34px;
+	font-weight: bold;
 }
