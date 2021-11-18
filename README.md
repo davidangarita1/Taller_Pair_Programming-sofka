@@ -1,6 +1,6 @@
 # Ejercicio de Pair Programming
 
-## tecnologías utilizada
+## Tecnologías utilizada
 * Javascript
 * HTML5
 * CSS3
