@@ -5,7 +5,7 @@ var player2 = document.getElementById("pj2");
 // Puntaje -tratamiento de puntaje y ganador
 var score1 = player1.innerHTML = 0;
 var score2 = player2.innerHTML = 0;
-const limite = 1;
+const limite = 5;
 
 function score(player) {
 	if (player == 1) {
