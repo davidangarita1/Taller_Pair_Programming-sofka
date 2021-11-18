@@ -1,7 +1,33 @@
 // Esta funcion es la configuracion del juego
 var player1 = document.getElementById("pj1");
 var player2 = document.getElementById("pj2");
-// Puntaje
+
+// Puntaje -tratamiento de puntaje y ganador
+var score1 = player1.innerHTML = 0;
+var score2 = player2.innerHTML = 0;
+const limite = 1;
+
+function score(player) {
+	if (player == 1) {
+		score1++;
+		player1.innerHTML = score1;
+	} else {
+		score2++;
+		player2.innerHTML = score2;
+	}
+}
+
+function winner(player) {
+	if (player == 1) {
+		alert("Ganó el jugador 1");
+		score1 = 0;
+		location.reload();
+	} else {
+		alert("Ganó el jugador 2");
+		score2 = 0;
+		location.reload();
+	}
+}
 
 (function () {
 	self.Board = function (width, height) {
@@ -44,7 +70,24 @@ var player2 = document.getElementById("pj2");
 			this.x += (this.speed_x * this.direction);
 			this.y += (this.speed_y);
 
-			// score
+			// score- tratamiento puntage 
+			if (score1 == limite) { winner(1);}
+			else if (score2 == limite) {winner(2);}
+
+			if (this.x <= 10) {
+				score(2);
+				this.x = 400;
+				this.y = 200;
+				this.speed_x = -this.speed_x;
+				this.bounce_angle = -this.bounce_angle;
+			}
+			if (this.x >= 790) {
+				score(1);
+				this.x = 400;
+				this.y = 200;
+				this.speed_x = -this.speed_x;
+				this.bounce_angle = -this.bounce_angle;
+			}
 
 			// Collision con paredes horizontales
 			if (this.y <= 10) {
